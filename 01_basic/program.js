@@ -12,7 +12,7 @@ function greet (){
         document.querySelector(".greeting").innerHTML= "Good Evening"
     }
     else{
-         document.querySelector(".greeting").innerHTML= "Good NIghr"
+         document.querySelector(".greeting").innerHTML= "Good Night"
     }
 }
 window.onload= greet();

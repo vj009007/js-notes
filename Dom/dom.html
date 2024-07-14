@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom All Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .w3-info {
+            background-color: #D9EEE1;
+            border-left: none;
+            padding: 32px;
+            margin: 24px;
+            margin-left: -32px;
+            margin-right: -32px;
+        }
+        .w3-text-indigo, .w3-hover-text-indigo:hover {
+            color: #3f51b5 !important;
+        }
+        .w3-xlarge {
+            font-size: 24px !important;
+        }
+        table.w3-table-all, table.ws-table-all {
+            margin: 20px 0;
+        }
+        .ws-table-all {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            display: table;
+            border: 1px solid #ccc;
+        }
+        .ws-table-all tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        .ws-table-all tr {
+            border-bottom: 1px solid #ddd;
+        }
+        .ws-table-all th:first-child, .ws-table-all td:first-child {
+            padding-left: 16px;
+        }
+        .ws-table-all td, .ws-table-all th {
+            padding: 8px 8px;
+            display: table-cell;
+            text-align: left;
+            vertical-align: top;
+        }
+        .ws-table-all tr:nth-child(even) {
+            background-color: #E7E9EB;
+        }
+
+        .ws-table-all tr {
+            border-bottom: 1px solid #ddd;
+        }
+        pre.code-style {
+            background: #000;
+            color: #fff;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section class="bg-light p-3">
+        <div class="container">
+            <h1>Hello Dear <span class="greeting"></span></h1>
+            <h3>JavaScript - DOM Methods</h3>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q1. document.getElementById()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Selects a single element by its ID.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.getElementById("#id")</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: id (string) - The ID of the element to find.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The element object or null if no element with the specified ID is found.</li>
+                      </ul>
+                      <pre class="code-style">
+                        <code>
+                            var element = document.getElementById('myElement');
+                            console.log(element);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q2. document.querySelector()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Selects the first element that matches a CSS selector.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.querySelector(selector)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: `selector` (string) - A CSS selector string.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The first matching element or null if no match is found.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.querySelector('.myClass');
+                        console.log(element);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q3. document.querySelectorAll() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Selects all elements that match a CSS selector.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.querySelectorAll(selector)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>:  selector (string) - A CSS selector string. </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: A NodeList of matching elements.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var elements = document.querySelectorAll('.myClass');
+                        elements.forEach(element => console.log(element));
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q4. document.createElement() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Creates a new HTML element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.createElement(tagName)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: tagName (string) - The name of the element to create.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: A new element object.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var newDiv = document.createElement('div');
+                        console.log(newDiv);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q5. document.createTextNode() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Creates a new text node.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.createTextNode(text) </li>
+                        <li class="list-group-item"><strong>Parameters</strong>: text (string) - The text content for the text node.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: A new text node object.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var textNode = document.createTextNode('Hello, world!');
+                        console.log(textNode);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q6. element.appendChild() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Appends a node as the last child of an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.appendChild(node)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: node - The node to append.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The appended node.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var parent = document.getElementById('parentElement');
+                        var child = document.createElement('div');
+                        parent.appendChild(child);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q7. element.removeChild() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Removes a child node from an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.removeChild(node)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: node - The child node to remove.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The removed node.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var parent = document.getElementById('parentElement');
+                        var child = document.getElementById('childElement');
+                        parent.removeChild(child);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q8. element.replaceChild() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Replaces a child node with a new node.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.replaceChild(newNode, oldNode)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: newNode - The node to insert. <br>
+                                                                                oldNode - The node to replace.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The replaced node.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var parent = document.getElementById('parentElement');
+                        var newChild = document.createElement('div');
+                        var oldChild = document.getElementById('childElement');
+                        parent.replaceChild(newChild, oldChild);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q9. element.insertBefore() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Inserts a new node before a reference node as a child of a specified element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.insertBefore(newNode, referenceNode)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>:' newNode' - The node to insert. <br>
+                            'referenceNode' - The node before which the new node will be inserted.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The inserted node.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var parent = document.getElementById('parentElement');
+                        var newChild = document.createElement('div');
+                        var referenceChild = document.getElementById('referenceElement');
+                        parent.insertBefore(newChild, referenceChild);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 10. element.cloneNode() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Clones a node.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.cloneNode(deep)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: 'deep' (boolean) - If 'true', clones the node and all its descendants; if false, clones only the node.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The cloned node.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var original = document.getElementById('originalElement');
+                        var clone = original.cloneNode(true);
+                        document.body.appendChild(clone);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 11. element.getAttribute()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Gets the value of an attribute on an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.getAttribute(name)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: 'name' (string) - The name of the attribute. </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The value of the attribute or null if the attribute does not exist.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        var value = element.getAttribute('data-custom');
+                        console.log(value);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 12. element.setAttribute()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Sets the value of an attribute on an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.setAttribute(name, value)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: name (string) - The name of the attribute.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>:  The value to set for the attribute.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        element.setAttribute('data-custom', 'someValue');
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 13. element.removeAttribute()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Removes an attribute from an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.removeAttribute(name)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: name (string) - The name of the attribute to remove.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        element.removeAttribute('data-custom');
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 14. element.classList.add()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Adds one or more class names to an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.classList.add(class1, class2, ...)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: One or more class names (strings) to add to the element.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        element.classList.add('newClass');
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 15. element.classList.remove()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Removes one or more class names from an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.classList.remove(class1, class2, ...)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: One or more class names (strings) to remove from the element.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        element.classList.remove('oldClass');
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 16. element.classList.toggle()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Toggles a class name on an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.classList.toggle(className, force)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: <br>
+                            'className (string)' - The class name to toggle. <br>
+                            'force (boolean, optional)' - If true, adds the class; if false, removes it.
+                        </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: true if the class is now present, false if it is now absent.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        element.classList.toggle('active');
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 17. element.classList.contains()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Checks if an element has a specific class.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.classList.contains(className)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: className (string) - The class name to check for</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: true if the class is present, false otherwise.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        var hasClass = element.classList.contains('active');
+                        console.log(hasClass);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 18. element.addEventListener()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Adds an event listener to an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.addEventListener(type, listener, options)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: <br>
+                            'type' (string) - The type of event to listen for (e.g., "click").
+                            'listener' (function) - The function to call when the event occurs.
+                            'options' (object, optional) - Additional options (e.g., { once: true }).
+                        </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        element.addEventListener('click', function() {
+                            console.log('Element clicked!');
+                        });
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 19. element.removeEventListener()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Removes an event listener from an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.removeEventListener(type, listener, options)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: <br>
+                            'type' (string) - The type of event to stop listening for. <br>
+                            'listener' (function) - The function to remove. <br>
+                            'options' (object, optional) - Additional options (e.g., { once: true }).
+                        </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        var handleClick = function() {
+                            console.log('Element clicked!');
+                        };
+                        element.addEventListener('click', handleClick);
+                        // Later...
+                        element.removeEventListener('click', handleClick);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 20. element.dispatchEvent()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Dispatches an event to an element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.dispatchEvent(event)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: The event object to dispatch.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: 'true' if the event was not canceled, false otherwise. </li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var element = document.getElementById('myElement');
+                        var event = new Event('build');
+                        element.addEventListener('build', function(e) {
+                            console.log('Event triggered!');
+                        });
+                        element.dispatchEvent(event);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 21. element.focus()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Sets focus on the specified element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.focus()</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: None</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var input = document.getElementById('myInput');
+                        input.focus();
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 22. element.blur()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Removes focus from the specified element.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: element.blur()</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: None</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: None</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var input = document.getElementById('myInput');
+                        input.blur();
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 23. document.createEvent()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Creates a new event object.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.createEvent(eventInterface)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: 'eventInterface' (string) - The type of event interface to create (e.g., "Event", "MouseEvent").</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The newly created event object</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var event = document.createEvent('Event');
+                        event.initEvent('build', true, true);
+                        var element = document.getElementById('myElement');
+                        element.dispatchEvent(event);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 24. document.createRange() </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Creates a new Range object.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.createRange()</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: None</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: A new Range object.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var range = document.createRange();
+                        var element = document.getElementById('myElement');
+                        range.selectNode(element);
+                        console.log(range);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 25. document.execCommand()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Executes a command for editable content.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.execCommand(command, showUI, value)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: <br>
+                            'command' (string) - The command to execute (e.g., "bold", "italic"). <br>
+                            'showUI' (boolean, optional) - Whether to show the default user interface (deprecated). <br>
+                            'value' (string, optional) - The value to use for the command.
+                        </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: true if the command was executed successfully, false otherwise.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        document.execCommand('bold');
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 26. document.adoptNode()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Adopts a node from another document.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.adoptNode(node)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: node - The node to adopt.</li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The adopted node.</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var otherDocument = document.implementation.createHTMLDocument('Other Document');
+                        var node = otherDocument.createElement('div');
+                        document.adoptNode(node);
+                        document.body.appendChild(node);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 27. document.importNode()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Imports a node from another document.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.importNode(node, deep)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: <br>
+                            'node' - The node to import. <br>
+                            'deep' (boolean) - Whether to import the node and all its descendants.
+                        </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: The imported node</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var otherDocument = document.implementation.createHTMLDocument('Other Document');
+                        var node = otherDocument.createElement('div');
+                        var importedNode = document.importNode(node, true);
+                        document.body.appendChild(importedNode);
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q 28. document.caretPositionFromPoint()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Description</strong>: Returns a CaretPosition object with the text offset and node at the specified coordinates.</li>
+                        <li class="list-group-item"><strong>Syntax</strong>: document.caretPositionFromPoint(x, y)</li>
+                        <li class="list-group-item"><strong>Parameters</strong>: <br>
+                            'x' (number) - The horizontal coordinate. <br>
+                            'y' (number) - The vertical coordinate.
+                        </li>
+                        <li class="list-group-item"><strong>Return Value</strong>: CaretPosition object or null</li>
+                      </ul>
+                </div>
+                <pre class="code-style">
+                    <code>
+                        var caretPosition = document.caretPositionFromPoint(100, 100);
+                        if (caretPosition) {
+                            console.log(caretPosition.offsetNode);
+                            console.log(caretPosition.offset);
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="dom.js"></script>
+    
+</body>
+</html>
