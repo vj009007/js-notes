@@ -109,6 +109,76 @@
             </div>
         </div>
     </section>
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q. Write a program for getting data in input and adding table rows</h3>
+           <div class="input-group mb-3 mt-3">
+              <input type="text" class="form-control tabHead" placeholder="Heading">
+              <input type="text" class="form-control tabPara" placeholder="Paragraph">
+              <button class="btn btn-secondary addRow" type="button">Button</button>
+           </div>
+           <table class="table addingTable table-bordered pt-4">
+              <tr>
+                 <th>Hello 1</th>
+                 <td>New Item</td>
+              </tr>
+              <tr>
+                 <th>Hello 2</th>
+                 <td>New Item</td>
+              </tr>
+              <tr>
+                 <th>Hello 3</th>
+                 <td>New Item</td>
+              </tr>
+              <tr>
+                 <th>Hello 4</th>
+                 <td>New Item</td>
+              </tr>
+           </table>
+           <button class="btn btn-secondary deleteRow">Dlt Row</button>
+           <button class="btn btn-secondary addColumn">ADD Column</button>
+           <button class="btn btn-secondary dltColumn">Dlt Column</button>
+        </div>
+     </section>
+
     <script src="./program.js"></script>
+    <script>
+       document.querySelector(".addRow").onclick = function() {
+        var myTab = document.querySelector(".addingTable tbody");
+        let value1 = document.querySelector(".tabHead").value ;
+        let value2 = document.querySelector(".tabPara").value ;
+        var createTr = document.createElement("tr");
+        var thdata = document.createElement("th");
+        thdata.innerHTML= value1; 
+        var tddata = document.createElement("td");
+        tddata.innerHTML = value2; 
+        createTr.appendChild(thdata);
+        createTr.appendChild(tddata);
+        myTab.appendChild(createTr);
+    };
+    document.querySelector(".deleteRow").onclick = function() {
+        var myTab = document.querySelector(".addingTable tbody");
+        if (myTab.lastElementChild) { 
+            myTab.removeChild(myTab.lastElementChild); 
+        }
+    };
+    document.querySelector(".addColumn").onclick = function(){
+        var myTab = document.querySelectorAll(".addingTable tr");
+        myTab.forEach(element => {
+            if (element) {
+                var newColumn = document.createElement("td");
+                element.appendChild(newColumn);
+            }
+        });
+    }
+    document.querySelector(".dltColumn").onclick = function(){
+        var myTab = document.querySelectorAll(".addingTable tr");
+        myTab.forEach(element => {
+            if (element) {
+                element.removeChild(element.lastElementChild);
+            }
+        });
+    }
+    </script>
 </body>
 </html> 

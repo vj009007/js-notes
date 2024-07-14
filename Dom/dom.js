@@ -27,11 +27,3 @@ allListGroups.forEach(group => {
 });
 
 
-
-// let allListGroups = document.querySelectorAll(".list-group");
-
-// allListGroups.forEach(group => {
-//   group.querySelectorAll("li:nth-child(-n+2)").forEach(item => {
-//     item.style.color = "red";
-//   });
-// });
