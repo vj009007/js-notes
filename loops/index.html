@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .objectStyle input{
+            max-width: 100px;
+        }
+        ul.list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        ul.list li span{
+            width: 100px;
+            display: inline-block;
+            display: inline-flex;
+        }
+        pre.code-style {
+            background: #000;
+            color: #fff;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .imgLoop{
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <section class="bg-light p-3">
+        <div class="container">
+            <h1>Hello Dear <span class="greeting">Good Evening</span></h1>
+            <h3>JavaScript loops </h3>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>JavaScript for loop Syntax </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item">initialExpression - Initializes a counter variable.</li>
+                        <li class="list-group-item">condition - The condition to be evaluated. If true, the body of the for loop is executed.</li>
+                        <li class="list-group-item">updateExpression - Updates the value of initialExpression.</li>
+                      </ul>
+                      <h6 class="mt-3">Once an iteration of the loop is completed, the condition is evaluated again. The process continues until the condition is false.</h6>
+                      <pre class="code-style">                        
+                        <code>
+                            while (condition) {
+                                // body of loop
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="mt-3">
+               <div class="col-ld-8 mx-auto p-4 border imgLoop">
+                 <img src="../images/javascript-for-loop_0.png" alt="Loop" class="img-fluid d-block mx-auto" />
+               </div>
+            </div>
+            <h4>Iterate Through an Array</h4>
+            <pre class="code-style">
+                <code>
+                    const fruits = ["apple", "banana", "cherry"];
+                    for (let i = 0; i < fruits.length; i++) {
+                        console.log(fruits[i]);
+                    }
+                </code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>JavaScript while Loop</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item">The while loop first evaluates the condition inside ( ).</li>
+                        <li class="list-group-item">If the condition evaluates to true, the code inside { } is executed. </li>
+                        <li class="list-group-item">Then, the condition is evaluated again.</li>
+                        <li class="list-group-item">This process continues as long as the condition evaluates to true.</li>
+                        <li class="list-group-item">If the condition evaluates to false, the loop stops.</li>
+                      </ul>
+                      <pre class="code-style">                        
+                        <code>
+                            for (initialExpression; condition; updateExpression) {
+                                // for loop body
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="mt-3">
+               <div class="col-ld-8 mx-auto p-4 border imgLoop">
+                 <img src="../images/javascript-while-loop_0.png" alt="Loop" class="img-fluid d-block mx-auto" />
+               </div>
+            </div>
+            <h4>Iterate Through an Array</h4>
+            <pre class="code-style">
+                <code>
+                    // initialize variable i
+                    let i = 1;
+
+                    // loop runs until i is less than 4
+                    while (i < 4) {
+                        console.log(i);
+                        i += 1;
+                    }
+                </code>
+            </pre>
+        </div>
+    </section>
+    
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>JavaScript do...while Loop</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item">The do…while loop executes the code inside { }.</li>
+                        <li class="list-group-item">Then, it evaluates the condition inside ( ).</li>
+                        <li class="list-group-item">If the condition evaluates to true, the code inside { } is executed again.</li>
+                        <li class="list-group-item">This process continues as long as the condition evaluates to true.</li>
+                        <li class="list-group-item">If the condition evaluates to false, the loop terminates.</li>
+                      </ul>
+                      <pre class="code-style">                        
+                        <code>
+                            do {
+                                // body of loop
+                            } while(condition);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="mt-3">
+               <div class="col-ld-8 mx-auto p-4 border imgLoop">
+                 <img src="../images/javascript-do-while-loop_0.png" alt="Loop" class="img-fluid d-block mx-auto" />
+               </div>
+            </div>
+            <h4>Iterate Through an Array</h4>
+            <pre class="code-style">
+                <code>
+                    let i = 3;
+
+                    // do...while loop
+                    do {
+                        console.log(i);
+                        i--;
+                    } while (i > 0);
+                </code>
+            </pre>
+        </div>
+    </section>
+    
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>JavaScript for... of Loop </h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>iterable</strong> - an iterable object (array, set, strings, etc).</li>
+                        <li class="list-group-item"><strong>element</strong> - items in the iterable</li>
+                      </ul>
+                      <pre class="code-style">                        
+                        <code>
+                            for (element of iterable) {
+                                // body of for...of
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <pre class="code-style">
+                <code>
+                    // array
+                    const students = ['John', 'Sara', 'Jack'];
+                    
+                    // using for...of
+                    for ( let element of students ) {
+                    
+                        // display the values
+                        console.log(element);
+                    }
+                </code>
+            </pre>
+        </div>
+    </section>
+    
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>JavaScript for...in loop</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>object</strong> - The object whose keys we want to iterate over.</li>
+                        <li class="list-group-item"><strong>key</strong> - A variable that stores a single key belonging to object.</li>
+                      </ul>
+                      <pre class="code-style">                        
+                        <code>
+                            for (key in object) {
+                                // body of for...in
+                            };
+                        </code>
+                    </pre>
+                </div>
+            </div>
+
+            <pre class="code-style">
+                <code>
+                    const salaries = {
+                        Jack: 24000,
+                        Paul: 34000,
+                        Monica: 55000
+                    };
+                    
+                    // use for...in to loop through
+                    // properties of salaries
+                    for (let i in salaries) {
+                    
+                        // access object key using [ ]
+                        // add a $ symbol before the key
+                        let salary = "$" + salaries[i];
+                    
+                        // display the values
+                        console.log(`${i}: ${salary}`);
+                    };
+                </code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>JavaScript forEach()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item">function(currentValue, index, arr) - a function to be run for each element of an array</li>
+                        <li class="list-group-item">currentValue - the value of an array</li>
+                        <li class="list-group-item">index (optional) - the index of the current element</li>
+                      </ul>
+                      <pre class="code-style">                        
+                        <code>
+                            array.forEach(function(currentValue, index, arr))
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <h5>forEach with Arrays</h5>
+            <pre class="code-style">
+                <code>
+                    let students = ['John', 'Sara', 'Jack'];
+
+                    // using forEach
+                    students.forEach(myFunction);
+                    
+                    function myFunction(item) {
+                    
+                        console.log(item);
+                    }
+                </code>
+            </pre>
+
+            <h5>forEach with Arrow Function</h5>
+            <pre class="code-style">
+                <code>
+                    // with arrow function and callback
+
+                    const students = ['John', 'Sara', 'Jack'];
+                    
+                    students.forEach(element => {
+                      console.log(element);
+                    });
+                </code>
+            </pre>
+        </div>
+    </section>
+
+
+</body>
+
+<script>
+    const mathsOpra = (callback) => {
+        callback(2, 4, 6);
+    };
+    mathsOpra((a, b, c) => {
+        const sum = a + b + c;
+        const multi = a * b * c;
+        console.table([{ a, b, c, sum, multi }]);
+    });
+
+</script>
+</html>
