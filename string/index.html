@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .objectStyle input{
+            max-width: 100px;
+        }
+        ul.list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        ul.list li span{
+            width: 100px;
+            display: inline-block;
+            display: inline-flex;
+        }
+        pre.code-style {
+            background: #000;
+            color: #fff;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .imgLoop{
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <section class="bg-light p-3">
+        <div class="container">
+            <h1>Hello Dear <span class="greeting"></span></h1>
+            <h3>Strings Methods </h3>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String In Java Script</h3>
+            <p><strong><em>The JavaScript string is a primitive data type that represents textual data. </em></strong></p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let name = "Rizwan Shaikh";
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String() constructor</h3>
+            <p>The String() constructor creates String objects. When called as a function, it returns primitive values of type String. </p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let FirstName = "Rizwan";
+                            let lastName = "Shaikh";
+
+                            let fullName = "".concat(FirstName , lastName);
+                            console.log(`My name is ${FirstName} ${lastName}`)
+                            //Output - My name is Rizwan Shaikh
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String bold()</h3>
+            <p>The bold() method of String values creates a string that embeds this string in a  element (<b>str</b>), which causes this string to be displayed as bold.</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            const contentString = "Hello, world";
+
+                            document.body.innerHTML = contentString.bold();
+
+                            //output <b>Hello, world</b>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String charAt()</h3>
+            <p>The bold() method of String values creates a string that embeds this string in a  element (<b>str</b>), which causes this string to be displayed as bold.</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            const sentence = 'The quick brown fox jumps over the lazy dog.';
+
+                            const index = 4;
+
+                            console.log(`The character at index ${index} is ${sentence.charAt(index)}`);
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String includes()</h3>
+            <p>The includes() method of String values performs a case-sensitive search to determine whether a given string may be found within this string, returning true or false as appropriate.</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let myName = "Mohd Rizwan Ahmad"
+                            console.log(myName.includes("R"));
+                            //Output true
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String indexOf()</h3>
+            <p>The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let myName = "Mohd Rizwan Ahmad"
+                            console.log(myName.indexOf("R"));
+                            //Output 5
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String lastIndexOf()</h3>
+            <p>The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring. </p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let myName = "Mohd Rizwan Ahmad"
+                            console.log(myName.lastIndexOf("d"));
+                            //Output 16
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String repeat()</h3>
+            <p>The lastIndexOf() method of String values searches this string and returns the index of the last occurrence of the specified substring. </p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            const mood = 'Happy! ';
+
+                            console.log(`I feel ${mood.repeat(3)}`);
+                            // Expected output: "I feel Happy! Happy! Happy! "
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String replace()</h3>
+            <p>Replace a string with another string, Only first</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let myName= "Mohd Rizwan Ahmad"
+                            console.log(myName.replace(" ", "-"));
+                            // Expected output: Mohd-Rizwan Ahmad
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String replaceAll()</h3>
+            <p>Replace all string with another string,</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let myName= "Mohd Rizwan Ahmad"
+                            console.log(myName.replaceAll(" ", "-"));
+                            // Expected output: Mohd-Rizwan-Ahmad
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>String search()</h3>
+            <p>Searches for a string and returns the position of a match.</p>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <pre class="code-style">                        
+                        <code>
+                            let myName= "Mohd Rizwan Ahmad"
+                            console.log(myName.replaceAll(" ", "-"));
+                            // Expected output: Mohd-Rizwan-Ahmad
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
