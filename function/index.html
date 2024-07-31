@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in Java Script</title>
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        ul.list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        ul.list li span {
+          width: 100px;
+          display: inline-block;
+          display: inline-flex;
+        }
+        div#myDiv ul li {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+        pre.code-style {
+            background: #000;
+            color: #fff;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        table.w3-table-all, table.ws-table-all {
+            margin: 20px 0;
+        }
+        .ws-table-all {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            display: table;
+            border: 1px solid #ccc;
+        }
+        .ws-table-all tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        .ws-table-all tr {
+            border-bottom: 1px solid #ddd;
+        }
+        .ws-table-all th:first-child, .ws-table-all td:first-child {
+            padding-left: 16px;
+        }
+        .ws-table-all td, .ws-table-all th {
+            padding: 8px 8px;
+            display: table-cell;
+            text-align: left;
+            vertical-align: top;
+        }
+        .ws-table-all tr:nth-child(even) {
+            background-color: #E7E9EB;
+        }
+
+        .ws-table-all tr {
+            border-bottom: 1px solid #ddd;
+        }
+      </style>
+</head>
+<body>
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q. Javascript Function call()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>With the call()</strong> method, you can write a method that can be used on different objects.</li>
+                        <li class="list-group-item"><strong>The call()</strong> method calls a function by passing this and specified values as arguments.</li>
+                        <li class="list-group-item"><strong>syntax</strong>: func.call(thisArg, arg1, ... argN)</li>
+                        <li class="list-group-item"><strong>call() Return Values</strong>: let result = sum.call(this, 5, 3);</li>
+                    </ul>
+                    <pre class="code-style">                       
+                        <code>
+                            const employe= {
+                                name : "rizwan",
+                                id: 12,
+                                salary: 780000,
+                            }
+                            function monSal(bonus , hra){
+                                return this.salary/12 + bonus + hra;
+                            }
+                            
+                            console.log(monSal.call(employe , 5000 , 100));
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <p data-height="500" data-theme-id="dark" data-slug-hash="zYVZOmb" data-default-tab="js,result" data-user="vj009007" data-embed-version="2" data-pen-title="My Pen" class="codepen">See the Pen <a href="https://codepen.io/vj009007/pen/zYVZOmb">My Pen</a> by vj009007 (<a href="https://codepen.io/vj009007">@vj009007</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q. Javascript Function apply()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>With the apply()</strong> method, you can write a method that can be used on different objects.</li>
+                        <li class="list-group-item"><strong>The apply()</strong> method calls a function with the passed this keyword value and arguments provided in the form of an array.</li>
+                        <li class="list-group-item"><strong>syntax</strong>: func.apply(thisArg, argsArray) </li>
+                        <li class="list-group-item"><strong>apply() Return Value  </strong>: greet.apply(personName, ["Good morning", "How are you?"]);</li>
+                    </ul>
+                    <pre class="code-style">                       
+                        <code>
+                            const employe= {
+                                name : "rizwan",
+                                id: 12,
+                                salary: 780000,
+                            }
+                            function monSal(bonus , hra){
+                                return this.salary/12 + bonus + hra;
+                            }
+                            
+                            console.log(monSal.apply(employe , [5000 , 100]));
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <p data-height="500" data-theme-id="dark" data-slug-hash="Rwzpbmo" data-default-tab="js,result" data-user="vj009007" data-embed-version="2" data-pen-title="My Pen" class="codepen">See the Pen <a href="https://codepen.io/vj009007/pen/zYVZOmb">My Pen</a> by vj009007 (<a href="https://codepen.io/vj009007">@vj009007</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <section class="bg-light p-3 mt-4">
+        <div class="container">
+            <h3>Q. JavaScript Function bind()</h3>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>With the bind()</strong> method, an object can borrow a method from another object.</li>
+                        <li class="list-group-item"><strong>The example below creates 2 objects (person and member).</strong> </li>
+                        <li class="list-group-item"><strong>The bind()</strong> method allows an object to borrow a method from another object without copying.</li>
+                        <li class="list-group-item"><strong>syntax</strong>: func.bind(thisArg, arg1, ... argN)</li>
+                        <li class="list-group-item"><strong>apply() Return Value  </strong>: Returns a copy of the given function with the specified this value, and initial arguments</li>
+                    </ul>
+                    <pre class="code-style">                       
+                        <code>
+                            // object definition
+                            const student1 = {
+                              name: "Jack",
+                              grade: "5",
+                              introduction: function () {
+                                console.log(this.name + "studies in grade" + this.grade + ".");
+                              },
+                            };
+                            
+                            // object definition
+                            const student2 = {
+                              name: "Jimmy ",
+                              grade: " 6",
+                            };
+                            
+                            // the object student2 is borrowing introduction method from student1
+                            let result= student1.introduction.bind(student2);
+                            
+                            // invoking introduction() function
+                            result();
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <p data-height="500" data-theme-id="dark" data-slug-hash="gONmOKz" data-default-tab="js,result" data-user="vj009007" data-embed-version="2" data-pen-title="My Pen" class="codepen">See the Pen <a href="https://codepen.io/vj009007/pen/zYVZOmb">My Pen</a> by vj009007 (<a href="https://codepen.io/vj009007">@vj009007</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+    </section>
+
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
