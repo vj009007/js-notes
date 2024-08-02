@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes In JavaScript</title>
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .objectStyle input {
+          max-width: 100px;
+        }
+        ul.list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        ul.list li span {
+          width: 100px;
+          display: inline-block;
+          display: inline-flex;
+        }
+        div#myDiv ul li {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+      }
+      p{
+        color: rgba(37, 38, 94);
+        font-size: 18px;
+        line-height: 30px;
+        margin-bottom: 16px;
+      }
+      pre.code-style {
+        background: #000;
+        color: #fff;
+        border-radius: 20px;
+        margin-top: 20px;
+      }
+      .cmmt{
+        color: #e6c07b;
+      }
+      .keyword {
+            color: #00eaffd9; 
+        }
+        .class-name {
+            color: #dd1616; 
+        }
+        .function-name {
+            color: #d700cc; 
+        }
+        .variable {
+            color: #24eab2; 
+        }
+        .string {
+            color: #D2691E; 
+        }
+        .comment {
+            color: #e6c07b; 
+            font-style: italic;
+        }
+      </style>
+</head>
+<body>
+    <section class="bg-light p-3 pt-4">
+        <div class="container">
+            <h2>Classes in JavaScript</h2>
+            <p>
+                In JavaScript ES6, classes provide a way to create blueprints for objects, similar to traditional object-oriented programming languages like C++ or Java.
+            </p>
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <pre class="code-style">                       
+<code>
+    <span class="comment">// Define a class named 'Person'</span>
+    <span class="keyword">class</span> <span class="class-name">Person</span> {
+        <span class="comment">// Class constructor to initialize the 'name' and 'age' properties</span>
+        <span class="keyword">constructor</span>(<span class="variable">name</span>, <span class="variable">age</span>) {
+            <span class="keyword">this</span>.<span class="variable">name</span> = <span class="variable">name</span>;
+            <span class="keyword">this</span>.<span class="variable">age</span> = <span class="variable">age</span>;
+        }
+        
+        <span class="comment">// Method to display a message</span>
+        <span class="function-name">greet</span>() {
+            <span class="object">console</span>.<span class="function-name">log</span>(<span class="string">`Hello, my name is ${this.name} and I am ${this.age} years old.`</span>);
+        }
+    }
+
+    <span class="comment">// Create two instances of the Person class</span>
+    <span class="keyword">let</span> <span class="variable">person1</span> = <span class="keyword">new</span> <span class="class-name">Person</span>(<span class="string">"Jack"</span>, <span class="number">30</span>);
+    <span class="keyword">let</span> <span class="variable">person2</span> = <span class="keyword">new</span> <span class="class-name">Person</span>(<span class="string">"Tina"</span>, <span class="number">33</span>);
+
+    <span class="comment">// Call greet() method on two instances</span>
+    <span class="variable">person1</span>.<span class="function-name">greet</span>();
+    <span class="variable">person2</span>.<span class="function-name">greet</span>();
+   
+</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+      </section>
+    <section class="bg-light p-3 pt-4 my-4">
+        <div class="container">
+            <h2>Class Constructor</h2>
+            <p>
+                A class constructor is a special method with in a class that is automatically executed when a new object of that is created 
+            </p>
+            <div class="row">
+                <div class="col-md-8 mx-auto mb-4">
+                    <img src="../images/class-constructor.webp" alt="Class" class="img-fluid d-block mx-auto" />
+                </div>
+            </div>
+        </div>
+      </section>
+
+    <section class="bg-light p-3 pt-4 my-4">
+        <div class="container">
+            <h2>JavaScript Getter and Setter</h2>
+
+            <h4>Getter</h4>
+
+            <p>In JavaScript, getter methods are used to access the properties of an object.</p>
+
+            <pre class="code-style">                       
+<code>
+    <span class="keyword">class</span> <span class="class-name">Square</span> {
+        <span class="comment">// Constructor to initialize width and height of the square</span>
+        <span class="keyword">constructor</span>(<span class="variable">_width</span>) {
+            <span class="keyword">this</span>.<span class="variable">width</span> = <span class="variable">_width</span>;
+            <span class="keyword">this</span>.<span class="variable">height</span> = <span class="variable">_width</span>;
+        }
+        
+        <span class="comment">// Getter for the area of the square</span>
+        <span class="keyword">get</span> <span class="variable">area</span>() {
+            <span class="keyword">return</span> <span class="keyword">this</span>.<span class="variable">width</span> * <span class="keyword">this</span>.<span class="variable">height</span>;
+        }
+    }
+    
+    <span class="comment">// Create a new Square object with a side length of 4</span>
+    <span class="keyword">let</span> <span class="variable">sqr1</span> = <span class="keyword">new</span> <span class="class-name">Square</span>(<span class="number">4</span>);
+    
+    <span class="comment">// Log the area of the square, which should be 16 (4 * 4)</span>
+    <span class="object">console</span>.<span class="function-name">log</span>(<span class="variable">sqr1</span>.<span class="variable">area</span>); <span class="comment">// Expected output: 16</span>
+       
+</code>
+            </pre>
+
+            <h4>Setter</h4>
+            <p>In JavaScript, setter methods are used to change the values of an object. </p>
+            <pre class="code-style">         
+<code>
+    <span class="keyword">class</span> <span class="class-name">Square</span> {
+        <span class="comment">// Constructor to initialize width and height of the square</span>
+        <span class="keyword">constructor</span> (<span class="variable">_width</span>) {
+            <span class="keyword">this</span>.<span class="variable">width</span> = <span class="variable">_width</span>;
+            <span class="keyword">this</span>.<span class="variable">height</span> = <span class="variable">_width</span>;
+        }
+        
+        <span class="comment">// Getter for the area of the square</span>
+        <span class="keyword">get</span> <span class="variable">area</span>() {
+            <span class="keyword">return</span> <span class="keyword">this</span>.<span class="variable">width</span> * <span class="keyword">this</span>.<span class="variable">height</span>;
+        }
+        
+        <span class="comment">// Setter to update width and height based on the given area</span>
+        <span class="keyword">set</span> <span class="variable">area</span>(<span class="variable">area</span>) {
+            <span class="keyword">this</span>.<span class="variable">width</span> = <span class="object">Math</span>.<span class="function-name">sqrt</span>(<span class="variable">area</span>);
+            <span class="keyword">this</span>.<span class="variable">height</span> = <span class="keyword">this</span>.<span class="variable">width</span>;
+        }
+    }
+    
+    <span class="comment">// Create a new Square object with a side length of 4</span>
+    <span class="keyword">let</span> <span class="variable">sqr1</span> = <span class="keyword">new</span> <span class="class-name">Square</span>(<span class="number">4</span>);
+    
+    <span class="comment">// Update the area of the square to 25, which changes the side length</span>
+    <span class="variable">sqr1</span>.<span class="variable">area</span> = <span class="number">25</span>;
+    
+    <span class="comment">// Log the new width of the square, which should now be 5</span>
+    <span class="object">console</span>.<span class="function-name">log</span>(<span class="variable">sqr1</span>.<span class="variable">width</span>); <span class="comment">// Expected output: 5</span>
+        
+</code>
+            </pre>
+        </div>
+      </section>
+
+      <section class="bg-light p-3 pt-4">
+        <div class="container">
+            <h2>JavaScript Object.defineProperty()</h2>
+            <p>
+                you can also use Object.defineProperty() method to add getters and setters.
+            </p>
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <pre class="code-style">                       
+<code>
+    <span class="keyword">const</span> <span class="variable">student</span> = {
+        <span class="variable">firstName</span>: <span class="string">'Monica'</span>
+    }
+    
+    <span class="comment">// getting property</span>
+    <span class="object">Object</span>.<span class="function-name">defineProperty</span>(<span class="variable">student</span>, <span class="string">"getName"</span>, {
+        <span class="variable">get</span>: <span class="keyword">function</span> () {
+            <span class="keyword">return</span> <span class="keyword">this</span>.<span class="variable">firstName</span>;
+        }
+    });
+    
+    <span class="comment">// setting property</span>
+    <span class="object">Object</span>.<span class="function-name">defineProperty</span>(<span class="variable">student</span>, <span class="string">"changeName"</span>, {
+        <span class="variable">set</span>: <span class="keyword">function</span> (<span class="variable">value</span>) {
+            <span class="keyword">this</span>.<span class="variable">firstName</span> = <span class="variable">value</span>;
+        }
+    });
+    
+    <span class="object">console</span>.<span class="function-name">log</span>(<span class="variable">student</span>.<span class="variable">firstName</span>); <span class="comment">// Monica</span>
+    
+    <span class="comment">// changing the property value</span>
+    <span class="variable">student</span>.<span class="variable">changeName</span> = <span class="string">'Sarah'</span>;
+    
+    <span class="object">console</span>.<span class="function-name">log</span>(<span class="variable">student</span>.<span class="variable">firstName</span>); <span class="comment">// Sarah</span>
+</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <section class="bg-light p-3 pt-4 my-4">
+        <div class="container">
+            <h2>Static Methods in Classes</h2>
+            <p>A static method in JavaScript is a funtion that belongs to a class rather than any instance of the class. You can call a static method directly on the class without needing to create object instance.</p>
+            <p>Static method are typically used for utility funtion that are relevent to the class but do not reqiure access to instance specific data.</p>
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <pre class="code-style">                       
+<code>
+    <span class="keyword">class</span> <span class="class-name">Employee</span> {
+        <span class="comment">// Static method to calculate and log monthly salary</span>
+        <span class="keyword">static</span> <span class="function-name">MonthySalary</span>(<span class="variable">salary</span>) {
+            <span class="object">console</span>.<span class="function-name">log</span>(<span class="variable">salary</span> / <span class="number">12</span>);
+        }
+    }
+    
+    <span class="class-name">Employee</span>.<span class="function-name">MonthySalary</span>(<span class="number">180000</span>); <span class="comment">// Expected output: 15000</span>
+       
+</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <section class="bg-light p-3 pt-4 my-4">
+        <div class="container">
+            <h2>JavaScript Class Inheritance / Extends </h2>
+            <p>Inheritance is a fundamental concept in Object-oriented Programming that allow one class to inherit properties and methods from another class. <br>
+                This promts code reuse and make your code more organized and easier to manage.
+            </p>
+            <h4>super() keyword</h4>
+            <p>The super keyword used inside a child class denotes its parent class.</p>
+
+            <h4>Classes Polymorphism</h4>
+            <p>Polymorphism is used to overwrite parent class method in child class</p>
+
+            <div class="row">
+                <div class="col-lg-12 mx-auto">
+                    <pre class="code-style">                       
+<code>
+    <span class="keyword">class</span> <span class="class-name">fullTimeEmp</span> {
+        <span class="keyword">constructor</span>(<span class="variable">name</span>, <span class="variable">dept</span>, <span class="variable">salary</span>) {
+            <span class="keyword">this</span>.<span class="variable">name</span> = <span class="variable">name</span>;
+            <span class="keyword">this</span>.<span class="variable">department</span> = <span class="variable">dept</span>;
+            <span class="keyword">this</span>.<span class="variable">salary</span> = <span class="variable">salary</span>;
+        }
+        
+        <span class="function-name">detail</span>() {
+            <span class="keyword">return</span> <span class="string">`My Name is ${this.name}, I am working as ${this.department} and my CTC is ${this.salary}`</span>;
+        }
+        
+        <span class="function-name">MonthlySalary</span>() {
+            <span class="keyword">return</span> <span class="keyword">this</span>.<span class="variable">salary</span> / <span class="variable">12</span>;
+        }
+        
+        <span class="function-name">dewaliBonus</span>(<span class="variable">bonus</span>) {
+            <span class="keyword">return</span> <span class="keyword">this</span>.<span class="function-name">MonthlySalary</span>() + <span class="variable">bonus</span>;
+        }
+    }
+
+    <span class="keyword">let</span> <span class="variable">emp1</span> = <span class="keyword">new</span> <span class="class-name">fullTimeEmp</span>(<span class="string">"rizwan"</span>, <span class="string">"React Js"</span>, <span class="variable">480000</span>);
+
+    <span class="keyword">console</span>.<span class="function-name">log</span>(<span class="variable">emp1</span>.<span class="function-name">MonthlySalary</span>());
+    <span class="keyword">console</span>.<span class="function-name">log</span>(<span class="variable">emp1</span>.<span class="function-name">detail</span>());
+    <span class="keyword">console</span>.<span class="function-name">log</span>(<span class="variable">emp1</span>.<span class="function-name">dewaliBonus</span>(<span class="variable">6000</span>));
+
+    <span class="keyword">class</span> <span class="class-name">partTimeEmp</span> <span class="keyword">extends</span> <span class="class-name">fullTimeEmp</span> {
+        <span class="keyword">constructor</span>(<span class="variable">name</span>, <span class="variable">dept</span>, <span class="variable">salary</span>, <span class="variable">contractEnd</span>) {
+            <span class="keyword">super</span>(<span class="variable">name</span>, <span class="variable">dept</span>, <span class="variable">salary</span>);
+            <span class="keyword">this</span>.<span class="variable">contractEnd</span> = <span class="variable">contractEnd</span>;
+        }
+        
+        <span class="function-name">dewaliBonus</span>(<span class="variable">bonus</span>) {
+            <span class="keyword">return</span> <span class="keyword">super</span>.<span class="function-name">MonthlySalary</span>() + <span class="variable">bonus</span>; <span class="comment">// Use super to call the parent class method</span>
+        }
+        
+        <span class="function-name">detail</span>() {
+            <span class="keyword">console</span>.<span class="function-name">log</span>(<span class="string">`${super.detail()}, last working day ${this.contractEnd}`</span>);
+        }
+    }
+
+    <span class="keyword">let</span> <span class="variable">partEmp1</span> = <span class="keyword">new</span> <span class="class-name">partTimeEmp</span>(<span class="string">"Ahmad"</span>, <span class="string">"Angular Js"</span>, <span class="variable">390000</span>, <span class="string">"10 August 2024"</span>);
+
+    <span class="keyword">console</span>.<span class="function-name">log</span>(<span class="variable">partEmp1</span>.<span class="function-name">dewaliBonus</span>(<span class="variable">3000</span>));
+    <span class="variable">partEmp1</span>.<span class="function-name">detail</span>();
+</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+      <script src="./script.js"></script>
+</body>
+</html>
