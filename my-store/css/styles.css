@@ -10838,3 +10838,8 @@ textarea.form-control-lg {
   padding: 10px  10px 0;
   object-fit: contain;
 }
+.cart-items img{
+  max-height: 50px;
+  width: 50px;
+  object-fit: contain;
+}

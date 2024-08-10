@@ -1,6 +1,6 @@
 let badge = document.querySelector(".badge");
 let count = 0;
-let cartItem = [];
+let cartItems = [];
 
 // Get Api 
 async function fetchProducts() {
@@ -30,25 +30,54 @@ async function fetchProducts() {
             `;
         });
         document.querySelector(".productAll").innerHTML = allItem;
-        addToCart();
+        addToCart(data);
 
     } catch (error) {
         console.error('Error fetching products:', error);
     }
 }
 
-function addToCart() {
+function addToCart(products) {
     const buttons = document.querySelectorAll(".add-to-cart");
     buttons.forEach(button => {
-      productId = "";
         button.onclick = function() {
-            badge.innerHTML = ++count;
+            let productId = Number(button.getAttribute("data-id"));
+            const product = products.find(p => p.id === productId);
 
-            productId = button.getAttribute("data-id");
-            console.log(productId)
-        };
-        
+            if (product) {
+                cartItems.push(product);
+                count++;
+                badge.textContent = count;
+                updateCartUI();
+            }
+        }; 
     });
 }
+
+function updateCartUI() {
+    const cartItem = document.querySelector(".cart-items");
+    cartItem.innerHTML = "";
+
+    let cartItemHTML = "";
+    let totPrice = 0;
+    cartItems.forEach((element) => {
+        cartItemHTML += `
+            <div class="cart-item d-flex justify-content-between align-items-center border-bottom py-2">
+                <div class="d-flex gap-2">
+                    <img class="card-img-top" src="${element.image}" alt="..." />
+                    <div>
+                        <p class="fw-bolder m-0">${element.title}</p>
+                    </div>
+                </div>
+                <span class="price">$${element.price}</span>
+            </div>
+        `;
+        totPrice += element.price;
+    });
+
+    cartItem.innerHTML = cartItemHTML;
+    document.querySelector(".total").textContent = `$${totPrice}`
+}
+
 
 fetchProducts();
