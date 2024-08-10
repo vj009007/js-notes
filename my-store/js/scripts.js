@@ -81,4 +81,5 @@ function updateCartUI() {
 function updateBadge() {
     badge.textContent = cartItems.length;
 }
+
 fetchProducts();

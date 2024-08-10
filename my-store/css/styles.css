@@ -10843,3 +10843,7 @@ textarea.form-control-lg {
   width: 50px;
   object-fit: contain;
 }
+.cart-items .cart-item:last-child{
+  border-bottom: 0px solid transparent !important;
+  padding-bottom: 0 !important;
+}
