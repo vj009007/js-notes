@@ -1,6 +1,6 @@
 let badge = document.querySelector(".badge");
-let count = 0;
 let cartItems = [];
+
 
 // Get Api 
 async function fetchProducts() {
@@ -46,9 +46,8 @@ function addToCart(products) {
 
             if (product) {
                 cartItems.push(product);
-                count++;
-                badge.textContent = count;
                 updateCartUI();
+                updateBadge()
             }
         }; 
     });
@@ -79,5 +78,7 @@ function updateCartUI() {
     document.querySelector(".total").textContent = `$${totPrice}`
 }
 
-
+function updateBadge() {
+    badge.textContent = cartItems.length;
+}
 fetchProducts();
