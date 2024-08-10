@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: silver;
+    font-family: arial;
+}
+
+
+.myProducts {
+  
+    padding: 60px 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.col {
+    width: 25%;
+    padding: 12px;
+}
+
+img{width:130px; height:130px;}
+.card {
+    background-color: white;
+    padding:10px;
+}
+.card-body {
+    padding: 15px;
+}
+
+.mycart{display: flex;  height:100vh;}
+.col-first{width:60%; padding:12px; }
+.col-first .col{width:100%;}
+.col-second{width:40%; padding:20px  15px;}
+.inner-list{background-color:white; padding:10px;   height:70%;}
+
+#search {
+    margin: 10px; 
+}
+li{
+    display: inline;
+}
+.row{
+    text-align: right; margin: 10px; padding: 10px;
+}

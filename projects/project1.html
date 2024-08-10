@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color</title>
+</head>
+<style>
+    .color{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size:20px;
+        font-family:Verdana, Geneva, Tahoma, sans-serif
+    }
+    .stopColor{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size:20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .startColor{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size:20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+</style>
+<body>
+
+    <div class="color"></div>
+    <button class="stopColor">Stop</button>
+    <button class="startColor">Start</button>
+
+    <script>
+        const body =  document.querySelector("body");
+        startBtn =  document.querySelector(".startColor");
+        stopBtn = document.querySelector(".stopColor");
+        startBtn.style="display:none";
+
+        generateColor = function(){
+            let randomColor=[];
+            for (let index = 1; index <=3; index++) {
+                let colorItem = Math.floor(Math.random()*255);
+                randomColor.push(colorItem)
+            }
+            rgb =`rgb(${randomColor[0]},${randomColor[1]},${randomColor[2]})`
+            body.style.backgroundColor= rgb;
+            document.querySelector(".color").innerHTML=`${rgb}`;
+        }
+        let colorGen = setInterval(generateColor, 2000);
+
+        
+        startBtn.onclick= function(){
+            if (!colorGen) { 
+                colorGen = setInterval(generateColor, 2000);
+            }
+            stopBtn.style.display = "block";
+            startBtn.style.display = "none";
+        }
+        stopBtn.onclick= function(){
+            clearInterval(colorGen);
+            colorGen = null; 
+            stopBtn.style.display = "none";
+            startBtn.style.display = "block";
+        }
+    </script>
+</body>
+</html>
